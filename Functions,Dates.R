@@ -17,10 +17,28 @@ above(1:10,5)
 # It returns a list but if all elements are of same length then a matrix
 x <- list(a = 1:5, b = rnorm(10))
 lapply(x, mean)
+# mapply() works on multiple arguments
+mapply(rep, 1:4, 4:1)
+# tapply() works on ranges, like factors of a vector
 # apply() is basically used on a matrix or an array with more than one dimension
 # It collapses a diimension of an array
 y <- matrix(rnorm(200),20,10)
 apply(y,2,mean)
+# split() breaks a vector into groups based on factors
+z <- c(rnorm(10),runif(10),rnorm(10,1))
+f <- gl(3,10)
+split(z,f)
+# It breaks, tapply() does a function to it
+# further uses
+library(datasets)
+s <- split(airquality, airquality$Month)
+sapply(s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind")],na.rm = T))
+# multiple factors
+f1 <- gl(2,5)
+f2 <- gl(5,2)
+split(z,list(f1,f2))
+# drop argument to remove empty levels
+# interaction() is automatically called
 
 # ************************Extras************************
 # runif, it generates random variables between a range
@@ -30,7 +48,11 @@ lapply(1:5, function(elt) elt^2)
 # any() returns true if any value is true
 # all() returns true if all is true
 # which() incides which are true 
+# gl() generates factor levels
+# interaction() takes two factors and combines them
+# datasets library has datasets
 # rowSums,rowMeans,colSums,colMeans
+# na.rm in functions
 
 # ************************Date,Time************************
 # Times are represented by POSIXct or POSIXlt classes
