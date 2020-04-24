@@ -37,6 +37,9 @@ sapply(s, function(x) colMeans(x[,c("Ozone","Solar.R","Wind")],na.rm = T))
 f1 <- gl(2,5)
 f2 <- gl(5,2)
 split(z,list(f1,f2))
+# tapply() example from exercise
+f <- factor(iris$Species)
+tapply(iris$Sepal.Length,f,function(x) round(mean(x)))
 # drop argument to remove empty levels
 # interaction() is automatically called
 
@@ -53,6 +56,7 @@ lapply(1:5, function(elt) elt^2)
 # datasets library has datasets
 # rowSums,rowMeans,colSums,colMeans
 # na.rm in functions
+# with() is a useful function that can be used with dataframes
 
 # ************************Date,Time************************
 # Times are represented by POSIXct or POSIXlt classes
