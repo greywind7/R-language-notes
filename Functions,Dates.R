@@ -57,6 +57,7 @@ lapply(1:5, function(elt) elt^2)
 # rowSums,rowMeans,colSums,colMeans
 # na.rm in functions
 # with() is a useful function that can be used with dataframes
+# str() function gives a short summary, summary() gives a detailed one
 
 # ************************Date,Time************************
 # Times are represented by POSIXct or POSIXlt classes
