@@ -10,7 +10,12 @@ above <- function(x,n){
 }
 above(1:10,5)
 # There is a ... argument
-
+# paste() function concatenates 
+# There are user defined binary operations
+'%p%' <- function(r,l){
+    paste(r,l,sep = " ")
+}
+"Hi"%p%"Boyo"
 # ************************Loop Func.************************
 # lapply() takes a list as an argument and does stuff to it
 # sapply() is similar to lapply() but it tries to simplfy the result
@@ -66,6 +71,7 @@ lapply(1:5, function(elt) elt^2)
 tm <- Sys.time()
 t2 <- as.POSIXlt(tm)
 names(unclass(t2))
+# difftime() function calcs diff. It has a units argument
 # Date format is yyyy-mm-dd
 dt <- as.Date('2001-07-27')
 # strptim() to convert a string to time
