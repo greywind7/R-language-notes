@@ -9,6 +9,10 @@ x[1]
 x[1:3]
 # Logical subsetting
 x[x > 'a']
+# Dealing with missing values 
+# which() just ignores the missing values
+mv <- c(NA,NA,1:20)
+mv[which(mv > 2)]
 # Logical vector
 u <- x > 'a'
 # Subsetting using a logical vector
