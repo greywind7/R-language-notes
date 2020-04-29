@@ -12,9 +12,32 @@ y[order(y$v1,y$v2),]
 library(plyr)
 arrange(z,v1)
 arrange(z,desc(v1),desc(v2))
+
+# ********************Reshaping,Summarizing********************
+# melt() melts and reshapes a data frame
+library(data.table)
+mtcars$carnames <- rownames(mtcars)
+carMelt <- melt(setDT(mtcars), id=c("carnames","gear","cyl"), measure.vars = c('mpg','hp'))
+carMelt
+# casting data frames
+# It basically means summarizing data frames
+cylData <- dcast(carMelt, cyl ~ variable)
+dcast(carMelt, cyl ~ variable, mean)
+# Summarizing counts using plyr
+data("InsectSprays")
+# Counting number of insects of each spray
+ddply(InsectSprays,.(spray),summarize, sum=sum(count))
+
 # ********************Extra stuff********************
 # Adding rows/cols
 z$v4 <- round(rnorm(7,10,7))
 # v4 didnt exist before but we added so it does now
 # same can be done using cbind and rbind as well
+# xtabs() command is useful to see relationships
+data(mtcars)
+head(mtcars)
+ftable(xtabs(mpg ~ cyl + hp,data =mtcars))
+# ifelse() is like tertiary operator in R
+# cut() and cut2() can be used to make categorical variables, can be used with quantiles
+# ceiling() and floor() for SIF and GIF respectively
 # ******************************************************
