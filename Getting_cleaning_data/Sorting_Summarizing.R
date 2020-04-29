@@ -40,4 +40,7 @@ ftable(xtabs(mpg ~ cyl + hp,data =mtcars))
 # ifelse() is like tertiary operator in R
 # cut() and cut2() can be used to make categorical variables, can be used with quantiles
 # ceiling() and floor() for SIF and GIF respectively
+# merge() function is used to merge two datasets
+# join() function can also be used
+# intersect() gives common data
 # ******************************************************
