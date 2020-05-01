@@ -36,4 +36,24 @@ with(subset(airquality, Month == 5), points(Wind,Ozone,col = "blue"))
 # adding a refression line
 model <- lm(Ozone ~ Wind, airquality)
 abline(model, lwd = 2)
+# example(points) to see different points in console
+# legend() to put legend in any corner
+
+# Plotting multiple graphs
+par(mfcol = c(1,2))
+plot(rnorm(100), rnorm(100), pch = 20)
+plot(rnorm(100), rpois(100,3), pch = 17)
+par(mfcol = c(1,1))
+
+# Adding step by step
+x <- rnorm(100)
+y <- x + rnorm(100)
+g <- gl(2,50, labels = c("Male", "Female"))
+plot(x,y, type = 'n')
+points(x[g == 'Male'], y[g == 'Male'], col = "Blue", pch = 20)
+points(x[g == 'Female'], y[g == 'Female'], col = "Red", pch = 20)
+
+# Exporting graphs
+# use a fn like pdf(),png(),jpeg(),bmp() create graph, dev.off() to exit. Simple lol
+# dev.copy() to copy a screen plot to a device or smth
 # ************************************************************
