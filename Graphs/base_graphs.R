@@ -1,7 +1,9 @@
 # ***********************Base plots***********************
 # plot() and hist() basically initialize the graph system
 library(datasets)
+# break argument is for the number of intervals
 hist(airquality$Ozone)
+# barplot() creates a bar graph
 # boxplot() helps to make boxplots
 airquality <- transform(airquality, Month = factor(Month))
 boxplot(Ozone ~ Month, airquality, xlab = "month", ylab = "ozone")
@@ -11,7 +13,7 @@ boxplot(Ozone ~ Month, airquality, xlab = "month", ylab = "ozone")
 # + pch: plotting symbol
 # + lty: Line type
 # + lwd: Line width
-# + col: plotting color
+# + col: plotting color (passing a factor will automatically set color)
 # + xlab: x-axis
 # + ylab: y-axis
 # + las: orientations of axis
@@ -56,4 +58,10 @@ points(x[g == 'Female'], y[g == 'Female'], col = "Red", pch = 20)
 # Exporting graphs
 # use a fn like pdf(),png(),jpeg(),bmp() create graph, dev.off() to exit. Simple lol
 # dev.copy() to copy a screen plot to a device or smth
+
+# ***********************Extras***********************
+# abline() draws a line on the graph
+# rug() makes a distribution at the base
+# dev.cur() to see the current, dev.set() to set a device
+# dev.copy() to copt plot, dev.off() to close a file
 # ************************************************************
