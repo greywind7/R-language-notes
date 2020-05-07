@@ -62,4 +62,7 @@ g + facet_grid(.~drv)
 # color, size and alpha(transparency) in points
 # linetype, method, se in smooth
 # base_family in different themes
+# axis limits
+# ylim,xlim, coord_cartesian to set limits
+# cut() for ranges
 # *************************************************************
