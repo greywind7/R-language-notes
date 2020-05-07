@@ -35,7 +35,19 @@ as.Date("4apr69","%d%b%y")
 library(lubridate)
 # combination of ymd converts any data in date
 dmy("200469")
-# times can be added using hms after being followed by _    
+# times can be added using hms after being followed by _ in hms eg: dmy_hms
+# help( package = ) gives help for a package
+# today() returns todays date 
+today()
+# year(), month(), day(), hour(), minute(), second() can be used to extract those infos
+# wday(label = T) will return day of the week
+# now("") retuens current time
+# put the timezone in quotes
+# valid tz: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# update() to change a given time variable
+# with_tz() gives a converted timezone
+# interval() to create an interval
+# as.period() to get the exacts of the interval
 
 # ********************regex basics********************
 # grep() is for regex
